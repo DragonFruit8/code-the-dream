@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <aside id="sidePanel">
+   
+        <div class="flex">
+            <h1>Dashboard</h1>
+            <div>
+                <ul id="navList">
+                </ul>
+            </div>
+                <div 
+                id="toggleInput"
+                class="showInput hidden">
+                <input 
+                class="inputField"
+                id="inputFieldValue"
+                type="text"
+                placeholder="www.vite.dev"
+                />
+                <button 
+                class="btnPrime"
+                id="addURL"
+                type="submit"
+                title='Enter sites you wish to save
+               Ex: www.vite.dev'>
+                Add Link
+            </button>
+        </div>
+        <button id="addLink" class="circleBtn add"
+        title="Click to show/hide Link Entering"
+        >+</button>
+    </div>
+<div id="weatherWindow">
+    <h2>Weather</h2>
+</div>
+<div class="flex" id="timeWindow">
+    <h3 id="countdown"></h3>
+    <div id="timerSession"
+        class="hidden"
+    >
+    <input 
+        type="time"
+        id="enterTime"
+        
+        />
+        <button id="setSession">Set</button>
+        </div>
+    <div id="sessionTimer">
+        <!-- <h3>Session Time</h3> -->
+    </div>
+    <button id="setTimer" class="btnSecond" title="Click To Start Session">
+        Begin Session
+    </button>
+    
+    
+</div>
+</aside>
+<main id="mainContent" class="mainContent blackScreen" >
+        <iframe 
+        name="contentFrame" 
+        data-tf-redirect-target='_self' 
+        id="contentFrame" 
+        width="100%" 
+        height="auto" 
+        frameborder="0"
+        ></iframe>
+    </main>
+    <script src="./script.js" type="module" src="x-frame-bypass.js" defer></script>
+</body>
+</html>

@@ -8,3 +8,12 @@ Features of Dashboard
 2 ) Link creation for quick navigation
 3 ) Timer for session setting
 4 ) Set time/weather by zipcode
+
+Subjects to research
+-   iFrames
+-   Links-to-iFrame (src, srcdoc)
+-   X-Frame-Options
+-   Zipcode conversions (Google API)
+-   Weather (Open-Meteo)
+-   Link Append (iFrame)
+-   Time/Timer (Date() method)
