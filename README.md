@@ -1,0 +1,10 @@
+# code-the-dream pre-work
+
+# Pre-Work description
+A user dashboard that allows for multiple domain navigation, allows for users to check the weather and forcast, see the current time, set a timer for a session period to focus on important tasks, and add in navigation links for quick referencing to websites.
+
+Features of Dashboard
+1 ) Weather API (Forecast/Current Weather)
+2 ) Link creation for quick navigation
+3 ) Timer for session setting
+4 ) Set time/weather by zipcode
