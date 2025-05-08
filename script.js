@@ -12,7 +12,7 @@ const startSession = document.getElementById("setSession");
 const timeInput = document.getElementById("enterTime");
 
 window.onload = function () {
-  const zipCode = prompt("Enter your Zip Code");
+  const zipCode = prompt("Get READY! \nEnter your Zip Code for Weather Updates");
   if (zipCode == null || zipCode == "") {
     zipCode = "00000"; // Default value if user cancels or leaves empty
   } else {
@@ -69,17 +69,19 @@ addURL.addEventListener("click", () => {
   let navListItem = document.createElement("li");
   let link = (anchor.href = `https://${inputText}`);
   let newText = inputText.split(".")[1];
+    if (inputText == undefined) {
+      return;
+    } else if (inputText == "") {
+      alert("Please enter a valid URL");
+      return;
+    } else if (inputText !== null || inputText !== "") {
   iFrame.setAttribute("src", `${link}`);
   anchor.textContent = `${newText}`;
   anchor.setAttribute("target", "contentFrame");
   navListItem.append(anchor);
   navList.append(navListItem);
   document.getElementById("inputFieldValue").value = "";
-  if (inputText == undefined) {
-    alert("Enter URL please");
-    // document.getElementById("inputFieldValue").value = "";
-    // iFrame.setAttribute("src", `${link}`);
-  }
+    }
 });
 
 timer.addEventListener("click", () => {
@@ -121,7 +123,7 @@ function setSessionTime() {
   target.setHours(inputHours, inputMinutes, 0, 0);
 
   if (target < now) {
-    target.setDate(target.getDate() + 1); // Set to next day if time has passed
+    target.setDate(target.getDate() + 1);
   }
 
   const endTime = target.getTime();
@@ -130,6 +132,9 @@ function setSessionTime() {
   document.getElementById("mainContent").classList.remove("blackScreen");
   document.getElementById("timerSession").classList.add("hidden");
   document.getElementById("setTimer").classList.add("hidden");
+  document.getElementById("welcome").classList.toggle("hidden");
+  document.getElementById("welcome").classList.toggle("visible");
+
 
   x = setInterval(() => {
     const current = new Date().getTime();
@@ -149,6 +154,7 @@ function setSessionTime() {
       color: red;">
       Session Ended
       </h3>`;
+        document.getElementById("welcome").classList.toggle("hidden");
     }
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
