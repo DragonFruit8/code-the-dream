@@ -132,29 +132,30 @@ function setSessionTime() {
   document.getElementById("mainContent").classList.remove("blackScreen");
   document.getElementById("timerSession").classList.add("hidden");
   document.getElementById("setTimer").classList.add("hidden");
-  document.getElementById("welcome").classList.toggle("hidden");
-  document.getElementById("welcome").classList.toggle("visible");
-
-
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("welcome").classList.remove("visible");
+  
+  
   x = setInterval(() => {
     const current = new Date().getTime();
     const diff = endTime - current;
-
+    
     if (diff <= 0) {
       clearInterval(x);
       x = null;
       timerActive = false;
-
+      
       document.getElementById("mainContent").classList.add("blackScreen");
       countdownEl.style.visibility = "hidden";
       document.getElementById("setTimer").classList.remove("hidden");
-
+      
       document.getElementById("sessionTimer").innerHTML = `
       <h3 style="text-align: center; padding-bottom: 10px; font-size: 24px;
       color: red;">
       Session Ended
       </h3>`;
-        document.getElementById("welcome").classList.toggle("hidden");
+      document.getElementById("welcome").classList.add("visible");
+      document.getElementById("welcome").classList.remove("hidden");
     }
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
