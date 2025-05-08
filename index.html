@@ -50,7 +50,7 @@
         id="enterTime"
         
         />
-        <button id="setSession">Set</button>
+        <button id="setSession" class="btnThird" title="Choose a time to END Session">Set</button>
         </div>
     <div id="sessionTimer">
         <!-- <h3>Session Time</h3> -->
@@ -63,6 +63,13 @@
 </div>
 </aside>
 <main id="mainContent" class="mainContent blackScreen" >
+    <div id="welcome" class="visible">
+        <h2>Welcome to Dashboard Timer</h2>
+        <p>Start by adding link you would like to visit during this time</p>
+        <p>After you are done, Click on Begin Session to enter a time<br/> 
+            you would like to use this session for.</p>
+            <p>Enjoy!</p>
+    </div>
         <iframe 
         name="contentFrame" 
         data-tf-redirect-target='_self' 
@@ -72,6 +79,7 @@
         frameborder="0"
         ></iframe>
     </main>
+
     <script src="./script.js" type="module" src="x-frame-bypass.js" defer></script>
 </body>
 </html>

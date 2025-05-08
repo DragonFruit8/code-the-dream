@@ -21,7 +21,6 @@ window.onload = function () {
   console.log(zipCode);
 };
 
-
 // Set realTime Time and set Interval refresh 30 second (Reliable / Less Intervals)
 // 2 Intervals every minute
 let realTime = setInterval(() => {
@@ -83,7 +82,6 @@ addURL.addEventListener("click", () => {
   }
 });
 
-
 timer.addEventListener("click", () => {
   session.classList.toggle("hidden");
   const now = new Date();
@@ -129,7 +127,6 @@ function setSessionTime() {
   const endTime = target.getTime();
   const diff = endTime - now.getTime();
 
-
   document.getElementById("mainContent").classList.remove("blackScreen");
   document.getElementById("timerSession").classList.add("hidden");
   document.getElementById("setTimer").classList.add("hidden");
@@ -146,12 +143,12 @@ function setSessionTime() {
       document.getElementById("mainContent").classList.add("blackScreen");
       countdownEl.style.visibility = "hidden";
       document.getElementById("setTimer").classList.remove("hidden");
+
       document.getElementById("sessionTimer").innerHTML = `
-        <h3 style="text-align: center; padding-bottom: 10px; font-size: 24px;
-        color: red;">
-          Session Ended
-        </h3>`;
-      return;
+      <h3 style="text-align: center; padding-bottom: 10px; font-size: 24px;
+      color: red;">
+      Session Ended
+      </h3>`;
     }
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -162,3 +159,6 @@ function setSessionTime() {
     countdownEl.style.color = diff <= 60000 ? "red" : "black";
   }, 1000);
 }
+
+// Text on the iFrame
+
