@@ -159,6 +159,3 @@ function setSessionTime() {
     countdownEl.style.color = diff <= 60000 ? "red" : "black";
   }, 1000);
 }
-
-// Text on the iFrame
-
