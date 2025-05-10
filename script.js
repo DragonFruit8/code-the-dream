@@ -94,9 +94,10 @@ function getLocation() {
 }
 
 function success(position) {
-  weather.innerHTML = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
-  localStorage.setItem("lat", position.coords.latitude);
-  localStorage.setItem("long", position.coords.longitude);
+  let lat = position.coords.latitude
+  let long = position.coords.longitude
+  localStorage.setItem("lat", lat);
+  localStorage.setItem("long", lat);
   return lat, long;
 }
 
