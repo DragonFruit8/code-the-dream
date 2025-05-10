@@ -14,6 +14,7 @@ const displayArt = document.getElementById("artDisplay");
 const weather = document.getElementById("weatherText");
 const artWindow = document.getElementById("artWindow");
 const navLink = document.getElementById("navLink");
+let lat, long;
 let sessionStarted = false;
 
 // Get Weather information from open-meteo
@@ -257,8 +258,7 @@ function setSessionTime() {
 // In case window doesn't load
  getLocation();
 
- if (lat === null || long === null) {
-  let lat = localStorage.getItem("lat");
-  let long = localStorage.getItem("long");
-  return lat, long;
+ if (lat == null || long == null) {
+  lat = localStorage.getItem("lat");
+  long = localStorage.getItem("long");
  }
