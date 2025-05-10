@@ -16,12 +16,9 @@ const artWindow = document.getElementById("artWindow");
 const navLink = document.getElementById("navLink");
 let sessionStarted = false;
 
-// Get GeoLocation onload
-window.onload = () => {
-  getLocation();
-};
 // Get Weather information from open-meteo
 window.onload = () => {
+  getLocation();
   let lat = localStorage.getItem("lat");
   let long = localStorage.getItem("long");
   fetch(
@@ -97,7 +94,6 @@ function getLocation() {
 }
 
 function success(position) {
-  getLocation();
   weather.innerHTML = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
   localStorage.setItem("lat", position.coords.latitude);
   localStorage.setItem("long", position.coords.longitude);
@@ -257,3 +253,5 @@ function setSessionTime() {
     countdownEl.style.color = diff <= 60000 ? "red" : "black";
   }, 1000);
 }
+// In case window doesn't load
+ getLocation();
