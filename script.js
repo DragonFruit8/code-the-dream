@@ -256,3 +256,9 @@ function setSessionTime() {
 }
 // In case window doesn't load
  getLocation();
+
+ if (lat === null || long === null) {
+  let lat = localStorage.getItem("lat");
+  let long = localStorage.getItem("long");
+  return lat, long;
+ }
