@@ -7,13 +7,13 @@ Features of Dashboard
 # 1 ) Weather API (Forecast/Current Weather)
 # 2 ) Link creation for quick navigation
 # 3 ) Timer for session setting
-# 4 ) Set time/weather by zipcode
+# 4 ) Set time/weather by zipcode CHANGE: (GeoLocation)
 
 Subjects to research
 -   iFrames
 -   Links-to-iFrame (src, srcdoc)
 -   X-Frame-Options
--   Zipcode conversions (Google API)
+-   Zipcode conversions (Google API) CHANGED TO: Geo Location (Used Coordinates instead)
 -   Weather (Open-Meteo)
 -   Link Append (iFrame)
 -   Time/Timer (Date() method)
