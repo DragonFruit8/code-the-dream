@@ -22,6 +22,7 @@ window.onload = () => {
   getLocation();
   let lat = localStorage.getItem("lat");
   let long = localStorage.getItem("long");
+ 
   fetch(
     `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`
   )
@@ -36,7 +37,8 @@ window.onload = () => {
 
     })
     .catch((error) => console.error("Error", error));
-};
+}
+
 
 function fetchArt() {
   // FETCH Art ARTIC API
@@ -188,6 +190,7 @@ timer.addEventListener("click", () => {
 
 startSession.addEventListener("click", () => {
   setSessionTime();
+
 });
 
 let x = null;
@@ -198,7 +201,7 @@ function setSessionTime() {
   timerActive = true;
   sessionStarted = true;
   if (x) clearInterval(x);
-
+  
   const countdownEl = document.getElementById("countdown");
   const timeframe = document.getElementById("enterTime").value;
   const [inputHours, inputMinutes] = timeframe.split(":").map(Number);
@@ -212,7 +215,7 @@ function setSessionTime() {
   }
 
   const endTime = target.getTime();
-  // const diff = endTime - now.getTime();
+  
 
   document.getElementById("mainContent").classList.remove("blackScreen");
   document.getElementById("timerSession").classList.add("hidden");
